@@ -4,7 +4,7 @@ import { User } from "./components/User";
 import { SplitBill } from "./components/SplitBill";
 import { NewUser } from "./components/NewUser";
 import ShowMore from "./components/ShowMore";
-
+import CurrencyExchange from "./components/CurrencyExchange";
 function App() {
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -60,7 +60,8 @@ function App() {
   }
 
   return (
-    <ShowMore />
+    < CurrencyExchange />
+    // <ShowMore />
     // <div className="App">
     //   <div className="app-container">
     //     <div className="user-stack">

@@ -266,3 +266,90 @@
 .show-more-button:hover {
   text-decoration: underline;
 }
+
+.currency-converter {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 32px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.currency-converter h2 {
+  margin: 0 0 24px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.converter-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.amount-box,
+.currency-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.amount-box label,
+.currency-box label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.amount-box input,
+.currency-box select {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.amount-box input:focus,
+.currency-box select:focus {
+  outline: none;
+  border-color: #ff7b54;
+  box-shadow: 0 0 0 3px rgba(255, 123, 84, 0.1);
+}
+
+.result {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  padding: 16px;
+  background: #fff5f1;
+  border-radius: 6px;
+  margin: 0;
+}
+
+/* Remove number input arrows */
+.amount-box input[type="number"]::-webkit-inner-spin-button,
+.amount-box input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.amount-box input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+.loader {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #666;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
