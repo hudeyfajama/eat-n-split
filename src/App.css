@@ -239,3 +239,30 @@
   margin: 0;
   width: 100%;
 }
+
+.text-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.text-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.show-more-button {
+  background: none;
+  border: none;
+  color: #ff7b54;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 4px 0;
+}
+
+.show-more-button:hover {
+  text-decoration: underline;
+}

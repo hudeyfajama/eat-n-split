@@ -3,6 +3,7 @@ import "./App.css";
 import { User } from "./components/User";
 import { SplitBill } from "./components/SplitBill";
 import { NewUser } from "./components/NewUser";
+import ShowMore from "./components/ShowMore";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -39,7 +40,7 @@ function App() {
           id: user.login.uuid,
           image: user.picture.large,
           name: `${user.name.first}`,
-          balance: 0 
+          balance: 0,
         }));
         setUsers(formattedUsers);
         setIsLoading(false);
@@ -59,37 +60,38 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <div className="app-container">
-        <div className="user-stack">
-          {users.map((user) => (
-            <User
-              key={user.id}
-              user={user}
-              isLoading={isLoading}
-              onSelect={handleSelectUser}
-              isSelected={selectedUser?.id === user.id}
-              balance={user.balance}
-              whoIsPaying={whoIsPaying}
-              yourExpense={yourExpense}
-            />
-          ))}
-          <NewUser onAddUser={handleAddUser} />
-        </div>
-        <div className="split-bill">
-          <SplitBill
-            whoIsPaying={whoIsPaying}
-            selectedUser={selectedUser}
-            onSplitBill={handleSplitBill}
-            yourExpense={yourExpense}
-            setYourExpense={setYourExpense}
-            billValue={billValue}
-            setBillValue={setBillValue}
-            setWhoIsPaying={setWhoIsPaying}
-          />
-        </div>
-      </div>
-    </div>
+    <ShowMore />
+    // <div className="App">
+    //   <div className="app-container">
+    //     <div className="user-stack">
+    //       {users.map((user) => (
+    //         <User
+    //           key={user.id}
+    //           user={user}
+    //           isLoading={isLoading}
+    //           onSelect={handleSelectUser}
+    //           isSelected={selectedUser?.id === user.id}
+    //           balance={user.balance}
+    //           whoIsPaying={whoIsPaying}
+    //           yourExpense={yourExpense}
+    //         />
+    //       ))}
+    //       <NewUser onAddUser={handleAddUser} />
+    //     </div>
+    //     <div className="split-bill">
+    //       <SplitBill
+    //         whoIsPaying={whoIsPaying}
+    //         selectedUser={selectedUser}
+    //         onSplitBill={handleSplitBill}
+    //         yourExpense={yourExpense}
+    //         setYourExpense={setYourExpense}
+    //         billValue={billValue}
+    //         setBillValue={setBillValue}
+    //         setWhoIsPaying={setWhoIsPaying}
+    //       />
+    //     </div>
+    //   </div>
+    // </div>
   );
 }
 
