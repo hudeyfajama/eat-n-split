@@ -5,6 +5,9 @@ import { SplitBill } from "./components/SplitBill";
 import { NewUser } from "./components/NewUser";
 import ShowMore from "./components/ShowMore";
 import CurrencyExchange from "./components/CurrencyExchange";
+import GeoLocation from "./components/GeoLocation";
+import { BankAccount } from "./components/BankAccount";
+
 function App() {
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -60,7 +63,9 @@ function App() {
   }
 
   return (
-    < CurrencyExchange />
+    <BankAccount />
+    // <GeoLocation />
+    // < CurrencyExchange />
     // <ShowMore />
     // <div className="App">
     //   <div className="app-container">
